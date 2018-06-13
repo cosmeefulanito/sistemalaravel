@@ -171,8 +171,6 @@
                 axios.get('/categoria').then(function (response) {                   
                     me.arrayCategoria = response.data;
                     //console.log(response.data);
-
-
                     //console.log(response);
                 })
                 .catch(function (error) {
@@ -181,13 +179,15 @@
 
             },
             registrarCategoria(){
-
+                let me = this;
                 axios.post('/categoria/registrar', {
                     'nombre': this.nombre,
                     'descripcion': this.descripcion
                 
                 }).then(function (response) {
-                    console.log(response);
+                    me.cerrarModal();
+                    me.listarCategorias();
+                    //console.log(response);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -216,11 +216,7 @@
                             // this.descripcion=data.descripcion;
                             // this.tituloModal="Actualizar categoria";
                             // this.modal=1;
-                            // break;
-
-
-
-                            
+                            // break;                           
 
                         }//switch accion
                     }//case categoria

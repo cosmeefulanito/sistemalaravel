@@ -47883,13 +47883,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         registrarCategoria: function registrarCategoria() {
-
+            var me = this;
             axios.post('/categoria/registrar', {
                 'nombre': this.nombre,
                 'descripcion': this.descripcion
 
             }).then(function (response) {
-                console.log(response);
+                me.cerrarModal();
+                me.listarCategorias();
+                //console.log(response);
             }).catch(function (error) {
                 console.log(error);
             });
@@ -47917,8 +47919,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                             // this.descripcion=data.descripcion;
                             // this.tituloModal="Actualizar categoria";
                             // this.modal=1;
-                            // break;
-
+                            // break;                           
 
                         } //switch accion
                     } //case categoria

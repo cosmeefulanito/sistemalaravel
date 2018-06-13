@@ -18,9 +18,9 @@ class CategoriaController extends Controller
     public function store(Request $request)
     {
         $categoria = new Categoria();
-        $categoria->$nombre = $request->nombre;
-        $categoria->$descripcion = $request->descripcion;
-        $categoria->$condicion = '1';
+        $categoria->nombre = $request->nombre;
+        $categoria->descripcion = $request->descripcion;
+        $categoria->condicion = '1';
         $categoria->save();
     }
 
